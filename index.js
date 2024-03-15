@@ -29,7 +29,7 @@ app.get('/probando', (req, res) => {
                 <li>Master en programacion</li>
         </div>
     `)*/
-    return res.status(200).send({
+    return res.status(200).json({
         curso:"Mongo DB",
         autor:"Erick Gutierrez",
         url:"www.utectulancingo.edu.mx",
