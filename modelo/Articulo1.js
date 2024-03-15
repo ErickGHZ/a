@@ -17,4 +17,6 @@ const ArticuloSchema = Schema({
         type: String,
         default:'default.png',
     },
-})
+});
+
+module.exports = model('Articulo', ArticuloSchema, 'articulos');

@@ -37,6 +37,10 @@ app.get('/probando', (req, res) => {
     
 });
 
+// Rutas
+const rutas_articulo = require('./rutas/articulo');
+app.use('/api', rutas_articulo);
+
 // Escuchar las peticiones HTTP
 app.listen(puerto, () => {
     console.log('Servidor corriendo en el puerto '+puerto)
