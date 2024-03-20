@@ -1,4 +1,4 @@
-const {Schema, modelo, trusted} = require('mongoose');
+const {Schema, model, trusted} = require('mongoose');
 
 const ArticuloSchema = Schema({
     titulo:{
