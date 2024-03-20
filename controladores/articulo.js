@@ -27,29 +27,26 @@ let parametros = req.body;
         })
     }
 
-    return res.status(200).json({
-        mensaje:"Accion de Guardar",
-        parametros
-    });
+  
     // Crear el objeto a guardar
 
     const articulo = new Articulo(parametros);
 
-    articulo.save((error, ArticuloGuardado) =>{
-        if (error || !ArticuloGuardado){
-            return res.status(400).json ({
-                status:"Error",
-                mensaje:"No se ha guardado el articulo"
-            });
-        }
-    })
-        // Giardar el articulo en la base de datos
+    articulo.save().then((articuloGuardado) => {
         return res.status(200).json({
             status:"success",
-            mensaje:ArticuloGuardado,
-            mensaje:"Articulo creado con exito"
+            articuloGuardado,
+            mensaje:"Articulo guardado con exito"
         })
-    }
+    }).catch((error) => {
+        return res.status(500).json({
+            status:"error",
+            error,
+            mensaje:"Error al guardar el articulo " + error.mensaje
+        });
+    });
+}
+
 // En este exports voy a pasar el nombre de todos los controlladores
 module.exports = {
     prueba,
