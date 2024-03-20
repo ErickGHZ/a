@@ -23,7 +23,7 @@ let parametros = req.body;
     } catch (error) {
         return res.status(400).json({
             status:"error",
-            mensaje:"Faltan datos por enviar"
+            mensaje:"Faltan datos por enviar "
         })
     }
 
