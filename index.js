@@ -14,6 +14,12 @@ conexion();
 const app = express();
 const puerto = 3900;
 
+
+// Convertir body a json
+app.use(express.json()); // El app.use sirve para crear un middleware
+
+app.use(express.urlencoded({extended:true}));
+
 // Configurar corse
 app.use(cors());
 
